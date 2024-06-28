@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpmbx3s4jvwet"]
+
+[ext_resource type="PackedScene" uid="uid://cq55v4kayhbn4" path="res://scenes/Level.tscn" id="1_yxybk"]
+[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/TimerLabel.tscn" id="2_j346o"]
+
+[node name="Node2D" type="Node"]
+
+[node name="Level" parent="." instance=ExtResource("1_yxybk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1219, 640)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Label" parent="CanvasLayer" instance=ExtResource("2_j346o")]
+offset_left = 1696.0
+offset_top = 884.0
+offset_right = 1840.0
+offset_bottom = 986.0

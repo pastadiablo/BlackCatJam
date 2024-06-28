@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cilj467j6wng7"]
+
+[ext_resource type="Script" path="res://scenes/TimeLabel.gd" id="1_40inm"]
+
+[node name="Label" type="Label" node_paths=PackedStringArray("timer")]
+texture_filter = 1
+offset_right = 54.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 128
+text = "04:21"
+script = ExtResource("1_40inm")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
