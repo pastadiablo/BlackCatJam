@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://byhdt3q3r8gd1"]
+[gd_scene load_steps=26 format=3 uid="uid://byhdt3q3r8gd1"]
 
 [ext_resource type="Script" path="res://scenes/VoidAgent.gd" id="1_bcf6f"]
 [ext_resource type="Texture2D" uid="uid://c27usan0yjla1" path="res://textures/cat-experiments/cat_idle.png" id="2_s4r1o"]
@@ -12,11 +12,17 @@ size = Vector2(9, 1)
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ynmny"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_md43n"]
+animation = &"idle_away"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3xha7"]
 animation = &"idle_curled"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2gqm1"]
 animation = &"idle_side"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s28cs"]
+animation = &"idle_side_away"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_osl0q"]
 animation = &"idle_side_look"
@@ -33,19 +39,24 @@ animation = &"idle_sphinx"
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l0krq"]
 states/Start/position = Vector2(155, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_ynmny")
-states/idle/position = Vector2(303, 47)
+states/idle/position = Vector2(306, -15)
+states/idle_away/node = SubResource("AnimationNodeAnimation_md43n")
+states/idle_away/position = Vector2(328, 51)
 states/idle_curled/node = SubResource("AnimationNodeAnimation_3xha7")
-states/idle_curled/position = Vector2(328, 108)
+states/idle_curled/position = Vector2(328, 246)
 states/idle_side/node = SubResource("AnimationNodeAnimation_2gqm1")
-states/idle_side/position = Vector2(319, 181)
+states/idle_side/position = Vector2(324, 177)
+states/idle_side_away/node = SubResource("AnimationNodeAnimation_s28cs")
+states/idle_side_away/position = Vector2(620, 177)
 states/idle_side_look/node = SubResource("AnimationNodeAnimation_osl0q")
-states/idle_side_look/position = Vector2(336, 247)
+states/idle_side_look/position = Vector2(466, 177)
 states/idle_snooze/node = SubResource("AnimationNodeAnimation_p01hp")
-states/idle_snooze/position = Vector2(328, 377)
+states/idle_snooze/position = Vector2(461, 246)
 states/idle_snooze_ear_twitch/node = SubResource("AnimationNodeAnimation_u2yc0")
-states/idle_snooze_ear_twitch/position = Vector2(366, 444)
+states/idle_snooze_ear_twitch/position = Vector2(636, 246)
 states/idle_sphinx/node = SubResource("AnimationNodeAnimation_w2u4x")
-states/idle_sphinx/position = Vector2(328, 318)
+states/idle_sphinx/position = Vector2(328, 110)
+graph_offset = Vector2(35, 55)
 
 [sub_resource type="Animation" id="Animation_fegqh"]
 length = 0.001
@@ -153,6 +164,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_fxj3e"]
 resource_name = "idle_snooze_ear_twitch"
 length = 2.2
+loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -185,12 +197,50 @@ tracks/0/keys = {
 "values": [21, 22, 20]
 }
 
+[sub_resource type="Animation" id="Animation_8r770"]
+resource_name = "idle_away"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [23, 24]
+}
+
+[sub_resource type="Animation" id="Animation_ew4j0"]
+resource_name = "idle_side_away"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [25, 26]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3r30k"]
 _data = {
 "RESET": SubResource("Animation_fegqh"),
 "idle": SubResource("Animation_cncuq"),
+"idle_away": SubResource("Animation_8r770"),
 "idle_curled": SubResource("Animation_ddaed"),
 "idle_side": SubResource("Animation_o7h1y"),
+"idle_side_away": SubResource("Animation_ew4j0"),
 "idle_side_look": SubResource("Animation_stlb4"),
 "idle_snooze": SubResource("Animation_nvxji"),
 "idle_snooze_ear_twitch": SubResource("Animation_fxj3e"),
@@ -203,11 +253,10 @@ position = Vector2(499, 414)
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_bcf6f")
-animationState = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_s4r1o")
-hframes = 23
+hframes = 27
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -222,11 +271,12 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wlnij")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_l0krq")
 anim_player = NodePath("../AnimationPlayer")
-parameters/current_length = 2.2
-parameters/current_position = 0.70195
-parameters/current_delta = 0.00694444
+parameters/current_length = 0.0
+parameters/current_position = 0.0
+parameters/current_delta = 0.0
 parameters/End/current_length = null
 parameters/End/current_position = null
 parameters/End/current_delta = null
@@ -234,17 +284,23 @@ parameters/Start/current_length = 0.0
 parameters/Start/current_position = 0.0
 parameters/Start/current_delta = 0.0
 parameters/idle/current_length = 2.0
-parameters/idle/current_position = 1.20936
-parameters/idle/current_delta = 0.00666667
+parameters/idle/current_position = 1.52798
+parameters/idle/current_delta = 0.00694444
+parameters/idle_away/current_length = 2.0
+parameters/idle_away/current_position = 1.08841
+parameters/idle_away/current_delta = 0.00666667
 parameters/idle_curled/current_length = 4.0
-parameters/idle_curled/current_position = 3.57356
+parameters/idle_curled/current_position = 0.0607401
 parameters/idle_curled/current_delta = 0.00666667
 parameters/idle_side/current_length = 2.0
 parameters/idle_side/current_position = 1.30535
 parameters/idle_side/current_delta = 0.00666667
+parameters/idle_side_away/current_length = 2.0
+parameters/idle_side_away/current_position = 0.497914
+parameters/idle_side_away/current_delta = 0.00694444
 parameters/idle_side_look/current_length = 2.0
-parameters/idle_side_look/current_position = 1.0567
-parameters/idle_side_look/current_delta = 0.00694444
+parameters/idle_side_look/current_position = 0.625825
+parameters/idle_side_look/current_delta = 0.00687733
 parameters/idle_snooze/current_length = 2.0
 parameters/idle_snooze/current_position = 0.00874956
 parameters/idle_snooze/current_delta = 0.00694444
@@ -252,7 +308,7 @@ parameters/idle_snooze_ear_twitch/current_length = 2.2
 parameters/idle_snooze_ear_twitch/current_position = 2.2
 parameters/idle_snooze_ear_twitch/current_delta = 0.0
 parameters/idle_sphinx/current_length = 2.2
-parameters/idle_sphinx/current_position = 0.70195
+parameters/idle_sphinx/current_position = 1.52773
 parameters/idle_sphinx/current_delta = 0.00694444
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

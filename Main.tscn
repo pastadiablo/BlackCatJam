@@ -9,28 +9,34 @@
 [node name="Level" parent="." instance=ExtResource("1_yxybk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(638, 364)
+position = Vector2(640, 360)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("2_j346o")]
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -102.0
+offset_top = -142.0
 offset_right = 102.0
+offset_bottom = 0.0
 grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Clicker" parent="CanvasLayer" instance=ExtResource("3_sc4e4")]
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -203.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
+offset_left = 108.0
+offset_top = -140.0
+offset_right = 410.0
+offset_bottom = 108.0
+grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)

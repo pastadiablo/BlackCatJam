@@ -1,11 +1,106 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdh1v1uete7wu"]
+[gd_scene load_steps=10 format=3 uid="uid://bdh1v1uete7wu"]
 
 [ext_resource type="Script" path="res://scenes/ClickerLabel.gd" id="1_cjrsi"]
+[ext_resource type="FontFile" uid="uid://cljyjctp754r2" path="res://fonts/m3x6.ttf" id="1_nj3ww"]
+[ext_resource type="Texture2D" uid="uid://dqp6vigmaj5nq" path="res://textures/gui/ClickerCounter.png" id="3_23a5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7le6f"]
+atlas = ExtResource("3_23a5q")
+region = Rect2(0, 0, 302, 248)
+
+[sub_resource type="Animation" id="Animation_b18tv"]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 302, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_ucoot"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 302, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_05wkv"]
+resource_name = "click_increment"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(302, 0, 302, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_wj7er"]
+resource_name = "click_decrement"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 248, 302, 248)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_004ja"]
+_data = {
+"RESET": SubResource("Animation_ucoot"),
+"click_decrement": SubResource("Animation_wj7er"),
+"click_increment": SubResource("Animation_05wkv"),
+"idle": SubResource("Animation_b18tv")
+}
 
 [node name="Clicker" type="Label"]
 texture_filter = 1
-offset_right = 40.0
-offset_bottom = 13.0
+custom_minimum_size = Vector2(302, 248)
+offset_right = 302.0
+offset_bottom = 248.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_nj3ww")
 theme_override_font_sizes/font_size = 256
-text = "05"
+text = "0 5"
+horizontal_alignment = 1
 script = ExtResource("1_cjrsi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(302, 248)
+layout_mode = 0
+offset_right = 302.0
+offset_bottom = 248.0
+texture = SubResource("AtlasTexture_7le6f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_004ja")
+}

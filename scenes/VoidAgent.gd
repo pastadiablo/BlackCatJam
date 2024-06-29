@@ -9,8 +9,8 @@ var direction = 1;
 
 enum VoidAnimationState
 {
-	idle, idle_curled, idle_side, idle_side_look, idle_snooze,
-	idle_snooze_ear_twitch, idle_sphinx
+	idle, idle_away, idle_curled, idle_side, idle_side_look, idle_side_away, 
+	idle_snooze, idle_snooze_ear_twitch, idle_sphinx
 }
 
 var player: AnimationPlayer
@@ -28,9 +28,13 @@ var sprite: Sprite2D
 		animationState = value
 		if !playback: return
 		if animationState:
-			playback.travel(VoidAnimationState.keys()[animationState])
+			player.play(VoidAnimationState.keys()[animationState])
+			player.seek(randf_range(0, 1))
+			#playback.travel(VoidAnimationState.keys()[animationState])
 		else:
-			playback.travel(VoidAnimationState.keys()[VoidAnimationState.idle])
+			#playback.travel(VoidAnimationState.keys()[VoidAnimationState.idle])
+			player.play(VoidAnimationState.keys()[VoidAnimationState.idle])
+			player.seek(randf_range(0, 1))
 
 func _ready() -> void:
 	sprite = find_child("Sprite2D")
@@ -38,7 +42,9 @@ func _ready() -> void:
 	player = find_child("AnimationPlayer")
 	tree = find_child("AnimationTree")
 	playback = tree.get("parameters/playback")
-	playback.travel(VoidAnimationState.keys()[animationState])
+	#playback.travel(VoidAnimationState.keys()[animationState])
+	player.play(VoidAnimationState.keys()[animationState])
+	player.seek(randf_range(0, 1))
 	
 
 func _process(delta: float) -> void:

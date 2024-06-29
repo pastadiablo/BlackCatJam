@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cilj467j6wng7"]
+[gd_scene load_steps=5 format=3 uid="uid://cilj467j6wng7"]
 
 [ext_resource type="Script" path="res://scenes/TimeLabel.gd" id="1_40inm"]
+[ext_resource type="FontFile" uid="uid://cljyjctp754r2" path="res://fonts/m3x6.ttf" id="1_uvai3"]
 [ext_resource type="Texture2D" uid="uid://cfyuycbdpbjo7" path="res://textures/gui/timer-background.png" id="2_mbr5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bjy4"]
+atlas = ExtResource("2_mbr5x")
+region = Rect2(0, 0, 196, 128)
 
 [node name="Label" type="Label" node_paths=PackedStringArray("timer")]
 show_behind_parent = true
@@ -11,6 +16,7 @@ offset_right = 204.0
 offset_bottom = 102.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_uvai3")
 theme_override_font_sizes/font_size = 128
 text = "99:99"
 horizontal_alignment = 1
@@ -18,11 +24,11 @@ script = ExtResource("1_40inm")
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_mbr5x")
+texture = SubResource("AtlasTexture_2bjy4")
