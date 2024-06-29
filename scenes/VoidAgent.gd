@@ -1,5 +1,5 @@
+@tool
 class_name VoidAgent extends CharacterBody2D
-
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -400.0
@@ -7,9 +7,45 @@ const STEP_UP = -40.0
 
 var direction = 1;
 
-@export var sidesArea: Area2D
+enum VoidAnimationState
+{
+	idle, idle_curled, idle_side, idle_side_look, idle_snooze,
+	idle_snooze_ear_twitch, idle_sphinx
+}
+
+var player: AnimationPlayer
+var tree: AnimationTree
+var playback: AnimationNodeStateMachinePlayback
+var sidesArea: Area2D
+var sprite: Sprite2D
+@export var flipH: bool
+@export var animationState: VoidAnimationState:
+	get:
+		if animationState: 
+			return animationState
+		return VoidAnimationState.idle
+	set(value): 
+		animationState = value
+		if !playback: return
+		if animationState:
+			playback.travel(VoidAnimationState.keys()[animationState])
+		else:
+			playback.travel(VoidAnimationState.keys()[VoidAnimationState.idle])
+
+func _ready() -> void:
+	sprite = find_child("Sprite2D")
+	sidesArea = find_child("HeadChecker")
+	player = find_child("AnimationPlayer")
+	tree = find_child("AnimationTree")
+	playback = tree.get("parameters/playback")
+	playback.travel(VoidAnimationState.keys()[animationState])
+	
+
+func _process(delta: float) -> void:
+	sprite.flip_h = flipH
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -25,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = direction * SPEED
 	#else:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
-	velocity.x = SPEED * direction;
+	#velocity.x = SPEED * direction;
 	var collision = move_and_collide(velocity * delta);
 	if collision:
 		if (collision.get_normal() == Vector2.LEFT ||

@@ -1,20 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpmbx3s4jvwet"]
+[gd_scene load_steps=4 format=3 uid="uid://cpmbx3s4jvwet"]
 
 [ext_resource type="PackedScene" uid="uid://cq55v4kayhbn4" path="res://scenes/Level.tscn" id="1_yxybk"]
 [ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/TimerLabel.tscn" id="2_j346o"]
+[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/ClickerLabel.tscn" id="3_sc4e4"]
 
 [node name="Node2D" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_yxybk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1219, 640)
+position = Vector2(638, 364)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Label" parent="CanvasLayer" instance=ExtResource("2_j346o")]
-offset_left = 1696.0
-offset_top = 884.0
-offset_right = 1840.0
-offset_bottom = 986.0
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("2_j346o")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.0
+offset_right = 102.0
+grow_horizontal = 2
+
+[node name="Clicker" parent="CanvasLayer" instance=ExtResource("3_sc4e4")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -203.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0

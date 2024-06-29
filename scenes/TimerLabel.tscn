@@ -1,15 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cilj467j6wng7"]
+[gd_scene load_steps=3 format=3 uid="uid://cilj467j6wng7"]
 
 [ext_resource type="Script" path="res://scenes/TimeLabel.gd" id="1_40inm"]
+[ext_resource type="Texture2D" uid="uid://cfyuycbdpbjo7" path="res://textures/gui/timer-background.png" id="2_mbr5x"]
 
 [node name="Label" type="Label" node_paths=PackedStringArray("timer")]
+show_behind_parent = true
 texture_filter = 1
-offset_right = 54.0
-offset_bottom = 38.0
+custom_minimum_size = Vector2(204, 102)
+offset_right = 204.0
+offset_bottom = 102.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 128
-text = "04:21"
+text = "99:99"
+horizontal_alignment = 1
 script = ExtResource("1_40inm")
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mbr5x")

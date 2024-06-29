@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdh1v1uete7wu"]
+
+[ext_resource type="Script" path="res://scenes/ClickerLabel.gd" id="1_cjrsi"]
+
+[node name="Clicker" type="Label"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 256
+text = "05"
+script = ExtResource("1_cjrsi")
