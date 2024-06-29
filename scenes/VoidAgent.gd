@@ -26,15 +26,6 @@ var sprite: Sprite2D
 		return VoidAnimationState.idle
 	set(value): 
 		animationState = value
-		if !playback: return
-		if animationState:
-			player.play(VoidAnimationState.keys()[animationState])
-			player.seek(randf_range(0, 1))
-			#playback.travel(VoidAnimationState.keys()[animationState])
-		else:
-			#playback.travel(VoidAnimationState.keys()[VoidAnimationState.idle])
-			player.play(VoidAnimationState.keys()[VoidAnimationState.idle])
-			player.seek(randf_range(0, 1))
 
 func _ready() -> void:
 	sprite = find_child("Sprite2D")
@@ -42,12 +33,16 @@ func _ready() -> void:
 	player = find_child("AnimationPlayer")
 	tree = find_child("AnimationTree")
 	playback = tree.get("parameters/playback")
-	#playback.travel(VoidAnimationState.keys()[animationState])
-	player.play(VoidAnimationState.keys()[animationState])
-	player.seek(randf_range(0, 1))
 	
-
+func _startAnimation():
+		if !playback: return
+		if animationState != null && player:
+			player.play(VoidAnimationState.keys()[animationState])
+			player.seek(randf_range(0, 1))
+			
 func _process(delta: float) -> void:
+	if !player.is_playing() || player.current_animation != VoidAnimationState.keys()[animationState]:
+		_startAnimation()
 	sprite.flip_h = flipH
 
 func _physics_process(delta: float) -> void:

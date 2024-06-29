@@ -91,6 +91,24 @@ tracks/0/keys = {
 "values": [1, 0]
 }
 
+[sub_resource type="Animation" id="Animation_8r770"]
+resource_name = "idle_away"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [23, 24]
+}
+
 [sub_resource type="Animation" id="Animation_ddaed"]
 resource_name = "idle_curled"
 length = 4.0
@@ -124,6 +142,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ew4j0"]
+resource_name = "idle_side_away"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [25, 26]
 }
 
 [sub_resource type="Animation" id="Animation_stlb4"]
@@ -195,42 +231,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [21, 22, 20]
-}
-
-[sub_resource type="Animation" id="Animation_8r770"]
-resource_name = "idle_away"
-length = 2.0
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [23, 24]
-}
-
-[sub_resource type="Animation" id="Animation_ew4j0"]
-resource_name = "idle_side_away"
-length = 2.0
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [25, 26]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3r30k"]
