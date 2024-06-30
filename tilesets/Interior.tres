@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=92 format=3 uid="uid://4mt6ig31u6ar"]
 
-[ext_resource type="Texture2D" uid="uid://cj37yoci71jf3" path="res://tilesets/VP2_Interriors.png" id="1_kcqdc"]
+[ext_resource type="Texture2D" uid="uid://d168fx70y22il" path="res://tilesets/VP2_Interiors_Saturated.png" id="1_xvtve"]
 [ext_resource type="Texture2D" uid="uid://n1xsigl3m7r4" path="res://tilesets/VP2_Main.png" id="2_ju5yb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_drym3"]
@@ -466,7 +466,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -8, -8, -16, -16, 
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s77c5"]
-texture = ExtResource("1_kcqdc")
+texture = ExtResource("1_xvtve")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
