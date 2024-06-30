@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://cq55v4kayhbn4"]
+[gd_scene load_steps=7 format=4 uid="uid://cq55v4kayhbn4"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_jnhep"]
 [ext_resource type="TileSet" uid="uid://4mt6ig31u6ar" path="res://tilesets/Interior.tres" id="3_0s5ev"]
 [ext_resource type="PackedScene" uid="uid://byhdt3q3r8gd1" path="res://scenes/VoidAgent.tscn" id="3_rbnql"]
+[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/GUI/TimerLabel.tscn" id="4_f5d4h"]
+[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/GUI/ClickerLabel.tscn" id="5_ub0sk"]
+[ext_resource type="PackedScene" uid="uid://cy7ap8o40halo" path="res://scenes/GUI/ScoreScreen.tscn" id="6_xnehh"]
 
 [node name="Level" type="Node2D"]
 texture_filter = 1
@@ -184,3 +187,45 @@ animationState = 1
 [node name="Void25" parent="Voids" instance=ExtResource("3_rbnql")]
 position = Vector2(123, 218)
 animationState = 8
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 213)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_f5d4h")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -142.0
+offset_right = 102.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+waitTime = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Clicker" parent="CanvasLayer" instance=ExtResource("5_ub0sk")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 108.0
+offset_top = -140.0
+offset_right = 410.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreScreen" parent="CanvasLayer" node_paths=PackedStringArray("level", "clicker") instance=ExtResource("6_xnehh")]
+level = NodePath("../..")
+clicker = NodePath("../Clicker")
+
+[connection signal="level_complete" from="CanvasLayer/Timer" to="CanvasLayer/ScoreScreen" method="_on_timer_level_complete"]

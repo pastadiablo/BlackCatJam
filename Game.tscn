@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpmbx3s4jvwet"]
 
-[ext_resource type="PackedScene" uid="uid://cq55v4kayhbn4" path="res://scenes/Level.tscn" id="1_yxybk"]
-[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/TimerLabel.tscn" id="2_j346o"]
-[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/ClickerLabel.tscn" id="3_sc4e4"]
+[ext_resource type="PackedScene" uid="uid://cq55v4kayhbn4" path="res://scenes/levels/Level1.tscn" id="1_yxybk"]
+[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/GUI/TimerLabel.tscn" id="2_j346o"]
+[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/GUI/ClickerLabel.tscn" id="3_sc4e4"]
 
-[node name="Node2D" type="Node"]
+[node name="Game" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_yxybk")]
 
@@ -26,6 +26,7 @@ offset_right = 102.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Clicker" parent="CanvasLayer" instance=ExtResource("3_sc4e4")]
 anchors_preset = 7
@@ -40,3 +41,4 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true

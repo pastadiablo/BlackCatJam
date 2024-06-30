@@ -1,7 +1,8 @@
-extends Label
+class_name ClickerLabel extends Label
 
 @export var count: int
 var player: AnimationPlayer
+var gameActive: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

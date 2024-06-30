@@ -1,9 +1,13 @@
 class_name TimeLabel extends Label
 
 signal level_complete
-@export var timer: Timer
+var timer: Timer
+@export var waitTime: int = 30
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer = find_child("Timer")
+	if !timer: return
+	timer.wait_time = waitTime
 	timer.timeout.connect(timer_timeout)
 	timer.start()
 
