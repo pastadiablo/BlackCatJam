@@ -1,17 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://g85u8a4h35t7"]
+[gd_scene load_steps=10 format=3 uid="uid://g85u8a4h35t7"]
 
 [ext_resource type="Script" path="res://scenes/GUI/LevelSelect.gd" id="1_ltf8v"]
+[ext_resource type="Texture2D" uid="uid://52m4u7hwjhpv" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/1.png" id="2_jtgjg"]
 [ext_resource type="PackedScene" uid="uid://d1khuliacatv8" path="res://scenes/GUI/LevelButton.tscn" id="2_xo273"]
+[ext_resource type="Texture2D" uid="uid://c5h1f6s82occ0" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/2.png" id="3_1djnp"]
+[ext_resource type="Texture2D" uid="uid://cpuqnv8a1cnt3" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/3.png" id="4_erpoe"]
+[ext_resource type="Texture2D" uid="uid://dgdaktmwjapa5" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/4.png" id="5_sku8v"]
+[ext_resource type="Texture2D" uid="uid://cvantrtsnados" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/5.png" id="6_vpiyb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bslq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cytnu"]
 border_width_top = 4
 border_width_bottom = 4
-border_color = Color(0.701405, 0.473565, 5.77569e-07, 1)
+border_color = Color(0, 0, 0, 1)
 
 [node name="LevelSelect" type="Node"]
 script = ExtResource("1_ltf8v")
+
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-2, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_jtgjg")
+expand_mode = 2
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D2"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_1djnp")
+expand_mode = 2
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D3"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4_erpoe")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-15, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D4"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("5_sku8v")
+expand_mode = 2
+
+[node name="Parallax2D5" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D5"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_vpiyb")
+expand_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -27,6 +83,7 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 128
 text = "Level Select"
 horizontal_alignment = 1
@@ -83,5 +140,6 @@ text = "Back to Menu"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 64
 text = "Total Stars: 50"

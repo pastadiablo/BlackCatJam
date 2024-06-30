@@ -1,16 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://c52f8noa3gx0o"]
+[gd_scene load_steps=8 format=3 uid="uid://c52f8noa3gx0o"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_u0mh2"]
+[ext_resource type="Texture2D" uid="uid://60ikrrw4toia" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/1.png" id="2_25ul8"]
+[ext_resource type="Texture2D" uid="uid://erponj4b0fw6" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/2.png" id="3_iq4rb"]
+[ext_resource type="Texture2D" uid="uid://02sxqwlsfafl" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/3.png" id="4_b1750"]
+[ext_resource type="Texture2D" uid="uid://cmayhdcjavhxb" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/4.png" id="5_kts3d"]
+[ext_resource type="Script" path="res://scenes/MainMenuCamera.gd" id="6_nxptb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8wqe"]
 
 [node name="MainMenu" type="Node" node_paths=PackedStringArray("playButton", "creditsButton", "quitButton")]
 script = ExtResource("1_u0mh2")
-playButton = NodePath("PanelContainer/VBoxContainer/PlayButton")
-creditsButton = NodePath("PanelContainer/VBoxContainer/CreditsButton")
-quitButton = NodePath("PanelContainer/VBoxContainer/QuitButton")
+playButton = NodePath("CanvasLayer/PanelContainer/VBoxContainer/PlayButton")
+creditsButton = NodePath("CanvasLayer/PanelContainer/VBoxContainer/CreditsButton")
+quitButton = NodePath("CanvasLayer/PanelContainer/VBoxContainer/QuitButton")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-2, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_25ul8")
+expand_mode = 2
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D2"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_iq4rb")
+expand_mode = 2
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D3"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4_b1750")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-15, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax/Parallax2D4"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("5_kts3d")
+expand_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("6_nxptb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,32 +70,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_n8wqe")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 256
 text = "Count the Voids"
 
-[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "Play"
 
-[node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4

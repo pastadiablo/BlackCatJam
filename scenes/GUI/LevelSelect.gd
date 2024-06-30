@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 			levelsContainer.add_child(button)
 			var requiredStars = GameStateManager.requiredStarMap[path] - GameStateManager.totalStars
 			if requiredStars > 0:
-				button.text = "Need %d more stars!" % requiredStars
+				button.text = "%d needed" % requiredStars
 				button.disabled = true
 				button.earnedStarsLabel.hide()
 			else:

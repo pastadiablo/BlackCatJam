@@ -71,5 +71,5 @@ func _on_timer_level_complete() -> void:
 		scoreLabel.text = "0/3 Stars!"
 		earnedStars = 0
 		
-	GameStateManager.levelStarMap[level.levelPathKey] = earnedStars
+	GameStateManager.levelStarMap[level.levelPathKey] = max(earnedStars, GameStateManager.levelStarMap[level.levelPathKey])
 	show()
