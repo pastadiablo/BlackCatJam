@@ -22,7 +22,7 @@ func _ready() -> void:
 	var i = 0
 	for path in levelPaths:
 		levelStarMap[path] = 0
-		requiredStarMap[path] = i
+		requiredStarMap[path] = i*2
 		i += 1
 	print(levelPaths)
 

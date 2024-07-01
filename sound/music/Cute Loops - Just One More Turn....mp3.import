@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dypocelsabjcf"
+path="res://.godot/imported/Cute Loops - Just One More Turn....mp3-cc242203c766e825b77525655f80f969.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Cute Loops - Just One More Turn....mp3"
+dest_files=["res://.godot/imported/Cute Loops - Just One More Turn....mp3-cc242203c766e825b77525655f80f969.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

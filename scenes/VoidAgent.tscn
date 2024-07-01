@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://byhdt3q3r8gd1"]
+[gd_scene load_steps=30 format=3 uid="uid://byhdt3q3r8gd1"]
 
 [ext_resource type="Script" path="res://scenes/VoidAgent.gd" id="1_bcf6f"]
 [ext_resource type="Texture2D" uid="uid://c27usan0yjla1" path="res://textures/cat-experiments/cat_idle.png" id="2_s4r1o"]
@@ -8,6 +8,12 @@ size = Vector2(2, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlnij"]
 size = Vector2(9, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shp1l"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u50hg"]
+size = Vector2(2.5, 2.5)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ynmny"]
 animation = &"idle"
@@ -233,6 +239,41 @@ tracks/0/keys = {
 "values": [21, 22, 20]
 }
 
+[sub_resource type="Animation" id="Animation_oacqq"]
+resource_name = "run"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_ojrex"]
+resource_name = "walk"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3r30k"]
 _data = {
 "RESET": SubResource("Animation_fegqh"),
@@ -244,19 +285,24 @@ _data = {
 "idle_side_look": SubResource("Animation_stlb4"),
 "idle_snooze": SubResource("Animation_nvxji"),
 "idle_snooze_ear_twitch": SubResource("Animation_fxj3e"),
-"idle_sphinx": SubResource("Animation_lg3wv")
+"idle_sphinx": SubResource("Animation_lg3wv"),
+"run": SubResource("Animation_oacqq"),
+"walk": SubResource("Animation_ojrex")
 }
 
 [node name="Tester" type="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(499, 414)
+collision_layer = 2
 floor_constant_speed = true
 floor_snap_length = 2.0
+platform_wall_layers = 1
 script = ExtResource("1_bcf6f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_s4r1o")
 hframes = 27
+vframes = 2
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -265,10 +311,36 @@ shape = SubResource("RectangleShape2D_64453")
 
 [node name="HeadChecker" type="Area2D" parent="."]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeadChecker"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wlnij")
+
+[node name="Left" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-5, 8)
+shape = SubResource("RectangleShape2D_shp1l")
+
+[node name="Right" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(5, 8)
+shape = SubResource("RectangleShape2D_u50hg")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-1, 1)
+amount = 15
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, -2)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false

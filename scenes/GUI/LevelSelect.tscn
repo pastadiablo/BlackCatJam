@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g85u8a4h35t7"]
+[gd_scene load_steps=11 format=3 uid="uid://g85u8a4h35t7"]
 
 [ext_resource type="Script" path="res://scenes/GUI/LevelSelect.gd" id="1_ltf8v"]
 [ext_resource type="Texture2D" uid="uid://52m4u7hwjhpv" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/1.png" id="2_jtgjg"]
@@ -7,13 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://cpuqnv8a1cnt3" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/3.png" id="4_erpoe"]
 [ext_resource type="Texture2D" uid="uid://dgdaktmwjapa5" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/4.png" id="5_sku8v"]
 [ext_resource type="Texture2D" uid="uid://cvantrtsnados" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer6/5.png" id="6_vpiyb"]
+[ext_resource type="Script" path="res://scenes/GUI/AudioButton.gd" id="8_mvwk4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bslq1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cytnu"]
 border_width_top = 4
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
 
 [node name="LevelSelect" type="Node"]
 script = ExtResource("1_ltf8v")
@@ -135,11 +142,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Back to Menu"
+script = ExtResource("8_mvwk4")
 
-[node name="TotalStarsLabel" type="Label" parent="PanelContainer"]
+[node name="TotalStarsLabel" type="RichTextLabel" parent="PanelContainer"]
+custom_minimum_size = Vector2(200, 64)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 64
-text = "Total Stars: 50"
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[right][img=bottom,bottom]res://textures/gui/voidstar-icon.png[/img]50[/right]"

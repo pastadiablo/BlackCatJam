@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmavqdjy6jl8u"
+path="res://.godot/imported/Cute Loops - Sugarplum Fanfare.mp3-12bb68bbbca1151b51e50f7c61e076ac.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Cute Loops - Sugarplum Fanfare.mp3"
+dest_files=["res://.godot/imported/Cute Loops - Sugarplum Fanfare.mp3-12bb68bbbca1151b51e50f7c61e076ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

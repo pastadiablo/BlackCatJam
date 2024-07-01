@@ -1,217 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1khuliacatv8"]
+[gd_scene load_steps=10 format=3 uid="uid://d1khuliacatv8"]
 
 [ext_resource type="Script" path="res://scenes/GUI/LevelButton.gd" id="1_v37u1"]
-[ext_resource type="Theme" uid="uid://dobo4pg7kj4rd" path="res://scenes/GUI/CatTheme.tres" id="1_wa34y"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2bl8"]
-load_path = "res://.godot/imported/voidstar.png-f8edc675cfc25c20a3b00dfcdb8e8bcf.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8njd"]
-atlas = SubResource("CompressedTexture2D_a2bl8")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7jqg"]
-atlas = SubResource("CompressedTexture2D_a2bl8")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3yapf"]
-atlas = SubResource("CompressedTexture2D_a2bl8")
-region = Rect2(48, 0, 48, 48)
+[ext_resource type="Theme" uid="uid://cutp2v40m45q8" path="res://scenes/GUI/CatTheme.tres" id="1_wa34y"]
+[ext_resource type="PackedScene" uid="uid://c6dpbl3wg6u38" path="res://scenes/GUI/VoidStar.tscn" id="3_pt5sc"]
 
 [sub_resource type="Animation" id="Animation_txe5s"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/TextureRect:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/TextureRect2:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/TextureRect3:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
 
 [sub_resource type="Animation" id="Animation_cbdvb"]
 resource_name = "nostar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/TextureRect:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/TextureRect2:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/TextureRect3:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
 
 [sub_resource type="Animation" id="Animation_lghv7"]
 resource_name = "onestar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/TextureRect:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/TextureRect2:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/TextureRect3:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
 
 [sub_resource type="Animation" id="Animation_xaxcl"]
 resource_name = "threestar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/TextureRect:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/TextureRect2:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/TextureRect3:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
 
 [sub_resource type="Animation" id="Animation_fo22m"]
 resource_name = "twostar"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/TextureRect:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/TextureRect2:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 48, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/TextureRect3:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(48, 0, 48, 48)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d1i6h"]
 _data = {
@@ -222,13 +28,17 @@ _data = {
 "twostar": SubResource("Animation_fo22m")
 }
 
-[node name="LevelButton" type="Button"]
+[node name="LevelButton" type="Button" node_paths=PackedStringArray("voidstar1", "voidstar2", "voidstar3")]
 texture_filter = 1
 custom_minimum_size = Vector2(200, 100)
 theme = ExtResource("1_wa34y")
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 64
 text = "Template"
 script = ExtResource("1_v37u1")
+voidstar1 = NodePath("HBoxContainer/VoidStar")
+voidstar2 = NodePath("HBoxContainer/VoidStar2")
+voidstar3 = NodePath("HBoxContainer/VoidStar3")
 
 [node name="StarsEarned" type="Label" parent="."]
 visible = false
@@ -252,17 +62,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="VoidStar" parent="HBoxContainer" instance=ExtResource("3_pt5sc")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_x8njd")
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="VoidStar2" parent="HBoxContainer" instance=ExtResource("3_pt5sc")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_f7jqg")
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+[node name="VoidStar3" parent="HBoxContainer" instance=ExtResource("3_pt5sc")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_3yapf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -81,23 +81,24 @@ _data = {
 
 [node name="Clicker" type="Label"]
 texture_filter = 1
-custom_minimum_size = Vector2(302, 248)
-offset_right = 302.0
-offset_bottom = 248.0
+custom_minimum_size = Vector2(152, 124)
+offset_right = 208.0
+offset_bottom = 203.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_nj3ww")
-theme_override_font_sizes/font_size = 256
+theme_override_font_sizes/font_size = 128
 text = "0 5"
 horizontal_alignment = 1
 script = ExtResource("1_cjrsi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
-custom_minimum_size = Vector2(302, 248)
+custom_minimum_size = Vector2(152, 124)
 layout_mode = 0
 offset_right = 302.0
 offset_bottom = 248.0
+scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_7le6f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

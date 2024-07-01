@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dobo4pg7kj4rd"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cutp2v40m45q8"]
 
 [ext_resource type="Texture2D" uid="uid://ct01rnjv7djg5" path="res://textures/gui/ninerect/ButtonHover.png" id="1_igl1p"]
 [ext_resource type="Texture2D" uid="uid://cm1suq4vs54rg" path="res://textures/gui/ninerect/ButtonHoverPress.png" id="2_37try"]

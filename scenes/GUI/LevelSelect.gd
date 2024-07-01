@@ -2,7 +2,7 @@ class_name LevelSelect extends Node
 
 var levelsContainer: Container
 var returnToMenuButton: Button
-var totalStarsLabel: Label
+var totalStarsLabel: RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	levelsContainer = find_child("LevelsContainer")
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	totalStarsLabel.text = "Total Stars: %02d" % GameStateManager.totalStars
+	totalStarsLabel.text = "[right][img=bottom,bottom]res://textures/gui/voidstar-icon.png[/img]%02d[/right]" % GameStateManager.totalStars
 	if levelsContainer.get_child_count() == 0 && GameStateManager.levelPaths.size() > 0:
 		for index in range(GameStateManager.levelPaths.size()):
 			var button: LevelButton = load("res://scenes/GUI/LevelButton.tscn").duplicate().instantiate()
@@ -29,10 +29,7 @@ func _process(delta: float) -> void:
 			if requiredStars > 0:
 				button.text = "%d needed" % requiredStars
 				button.disabled = true
-				button.earnedStarsLabel.hide()
 			else:
 				button.text = "Level %02d" % (index+1)
 				button.disabled = false
-				button.earnedStarsLabel.show()
-				button.earnedStarsLabel.text = "%d/3" % GameStateManager.levelStarMap[path]
-	
+				button._setStars(GameStateManager.levelStarMap[path])

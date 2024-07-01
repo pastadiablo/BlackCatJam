@@ -12,6 +12,7 @@ func _ready() -> void:
 		SceneLoader.SwitchToScene(SceneLoader.CatScene.Credits))
 	quitButton.pressed.connect(func():
 		get_tree().quit())
+	#Sound.startBGM()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

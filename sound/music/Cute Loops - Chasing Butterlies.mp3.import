@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ck1bn8crt5yjb"
+path="res://.godot/imported/Cute Loops - Chasing Butterlies.mp3-a3179df8a8a441ee65b37c3135e1f078.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Cute Loops - Chasing Butterlies.mp3"
+dest_files=["res://.godot/imported/Cute Loops - Chasing Butterlies.mp3-a3179df8a8a441ee65b37c3135e1f078.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

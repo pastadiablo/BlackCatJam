@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c52f8noa3gx0o"]
+[gd_scene load_steps=9 format=3 uid="uid://c52f8noa3gx0o"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_u0mh2"]
 [ext_resource type="Texture2D" uid="uid://60ikrrw4toia" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/1.png" id="2_25ul8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://02sxqwlsfafl" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/3.png" id="4_b1750"]
 [ext_resource type="Texture2D" uid="uid://cmayhdcjavhxb" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/4.png" id="5_kts3d"]
 [ext_resource type="Script" path="res://scenes/MainMenuCamera.gd" id="6_nxptb"]
+[ext_resource type="Script" path="res://scenes/GUI/AudioButton.gd" id="7_lxyox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8wqe"]
 
@@ -88,13 +89,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "Play"
+script = ExtResource("7_lxyox")
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "Credits"
+script = ExtResource("7_lxyox")
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
@@ -102,3 +106,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "Quit"
+script = ExtResource("7_lxyox")

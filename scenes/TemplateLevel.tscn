@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://fij2wpi5eipy"]
+[gd_scene load_steps=7 format=4 uid="uid://d3kqfe7pd0gy3"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_ee4t6"]
 [ext_resource type="TileSet" uid="uid://4mt6ig31u6ar" path="res://tilesets/Interior.tres" id="2_dnbp1"]
@@ -32,6 +32,11 @@ tile_set = ExtResource("2_dnbp1")
 navigation_enabled = false
 navigation_visibility_mode = 1
 
+[node name="Doors" type="TileMapLayer" parent="Layers"]
+tile_set = ExtResource("2_dnbp1")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
 [node name="Floors" type="TileMapLayer" parent="Layers"]
 tile_set = ExtResource("2_dnbp1")
 navigation_enabled = false
@@ -60,6 +65,7 @@ navigation_enabled = false
 navigation_visibility_mode = 1
 
 [node name="Voids" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 
 [node name="Void1" parent="Voids" instance=ExtResource("3_0xigy")]
 position = Vector2(306, 230)
@@ -71,39 +77,41 @@ position = Vector2(320, 213)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_6vjsm")]
-anchors_preset = 7
-anchor_left = 0.5
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -102.0
-offset_top = -142.0
-offset_right = 102.0
-offset_bottom = 0.0
+offset_top = -248.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
+
+[node name="Timer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_6vjsm")]
+layout_mode = 2
 waitTime = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="Clicker" parent="CanvasLayer" instance=ExtResource("5_v13wj")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 108.0
-offset_top = -140.0
-offset_right = 410.0
-offset_bottom = 108.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+[node name="Clicker" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_v13wj")]
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreScreen" parent="CanvasLayer" node_paths=PackedStringArray("level", "clicker") instance=ExtResource("6_84lsh")]
 visible = false
 level = NodePath("../..")
-clicker = NodePath("../Clicker")
+clicker = NodePath("../HBoxContainer/Clicker")
 
-[connection signal="level_complete" from="CanvasLayer/Timer" to="CanvasLayer/ScoreScreen" method="_on_timer_level_complete"]
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 64
+theme_override_font_sizes/font_size = 512
+text = "3"

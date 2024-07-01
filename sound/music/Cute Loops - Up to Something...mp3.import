@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg1khncbwnmgf"
+path="res://.godot/imported/Cute Loops - Up to Something...mp3-0fa076c617e0fdd6b2d0edb4dff1c485.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Cute Loops - Up to Something...mp3"
+dest_files=["res://.godot/imported/Cute Loops - Up to Something...mp3-0fa076c617e0fdd6b2d0edb4dff1c485.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -13,22 +13,27 @@ func _process(delta: float) -> void:
 	text = "%01d %01d" % [count/10, fmod(count, 10)]
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !gameActive: return
 	if event.is_action("count_increment"):
 		if event.is_action_pressed("count_increment"):
 			if count+1 < 100:
 				count += 1
 				player.play("click_increment")
+				Sound.play(self, preload("res://sound/UI2_Button_1.mp3"), 10, 1.2)
 		else: 
 			if event.is_action_released("count_increment"):
 				player.queue("idle")
+				Sound.play(self, preload("res://sound/UI2_Button_3.mp3"), 10, 1.2)
 	else:
 		if event.is_action("count_decrement"):
 			if event.is_action_pressed("count_decrement"):
 				if count-1 >= 0:
 					count -= 1
 					player.play("click_decrement")
+					Sound.play(self, preload("res://sound/UI2_Button_1.mp3"), 10, 0.8)
 			else:
 				if event.is_action_released("count_decrement"):
 					player.queue("idle")
+					Sound.play(self, preload("res://sound/UI2_Button_3.mp3"), 10, 0.8)
 			
 		

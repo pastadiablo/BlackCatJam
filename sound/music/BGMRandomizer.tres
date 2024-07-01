@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=11 format=3 uid="uid://bbeyxfk83wvfw"]
+
+[ext_resource type="AudioStream" uid="uid://bmxhygacwewd7" path="res://sound/music/Cute Loops - Candy-Coated Dreams.mp3" id="1_ytsvl"]
+[ext_resource type="AudioStream" uid="uid://ck1bn8crt5yjb" path="res://sound/music/Cute Loops - Chasing Butterlies.mp3" id="2_3kjuv"]
+[ext_resource type="AudioStream" uid="uid://dfv2wc38vd8tt" path="res://sound/music/Cute Loops - Chicken Coop Party.mp3" id="3_5n8vv"]
+[ext_resource type="AudioStream" uid="uid://cbrd7iitolq34" path="res://sound/music/Cute Loops - Firefly Forest.mp3" id="4_xcdao"]
+[ext_resource type="AudioStream" uid="uid://dquldicyttdet" path="res://sound/music/Cute Loops - Gumdrop Groove.mp3" id="5_6mson"]
+[ext_resource type="AudioStream" uid="uid://dypocelsabjcf" path="res://sound/music/Cute Loops - Just One More Turn....mp3" id="6_oacxd"]
+[ext_resource type="AudioStream" uid="uid://dqspfa054swp6" path="res://sound/music/Cute Loops - Let's Play!.mp3" id="7_ufteu"]
+[ext_resource type="AudioStream" uid="uid://j5t7j3yad4on" path="res://sound/music/Cute Loops - Puddle Jumping.mp3" id="8_nk5lc"]
+[ext_resource type="AudioStream" uid="uid://bmavqdjy6jl8u" path="res://sound/music/Cute Loops - Sugarplum Fanfare.mp3" id="9_msd0t"]
+[ext_resource type="AudioStream" uid="uid://cg1khncbwnmgf" path="res://sound/music/Cute Loops - Up to Something...mp3" id="10_cis8r"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_ytsvl")
+stream_1/stream = ExtResource("2_3kjuv")
+stream_2/stream = ExtResource("3_5n8vv")
+stream_3/stream = ExtResource("4_xcdao")
+stream_4/stream = ExtResource("5_6mson")
+stream_5/stream = ExtResource("6_oacxd")
+stream_6/stream = ExtResource("7_ufteu")
+stream_7/stream = ExtResource("8_nk5lc")
+stream_8/stream = ExtResource("9_msd0t")
+stream_9/stream = ExtResource("10_cis8r")
