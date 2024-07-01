@@ -175,6 +175,7 @@ alignment = 1
 
 [node name="Timer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_471vh")]
 layout_mode = 2
+waitTime = 20
 metadata/_edit_use_anchors_ = true
 
 [node name="Clicker" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_et1le")]
