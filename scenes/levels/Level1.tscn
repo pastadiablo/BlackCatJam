@@ -27,7 +27,6 @@ navigation_visibility_mode = 1
 [node name="BackgroundFurniture" type="TileMapLayer" parent="Layers"]
 tile_map_data = PackedByteArray("AAAIAAYAAAAaAAAAAAAIAAcAAAAaAAEAAAALAAYAAAAeAAoAAAALAAcAAAAeAAsAAAAMAAcAAAAfAAsAAAAHAAcAAAAZAAQAAAAJAAcAAAAaAAQAAAA=")
 tile_set = ExtResource("2_7ccn4")
-collision_visibility_mode = 1
 navigation_enabled = false
 navigation_visibility_mode = 1
 
@@ -84,6 +83,13 @@ animationState = 2
 position = Vector2(241, 218)
 moves = true
 speed = 10.0
+animationState = 9
+
+[node name="Void11" parent="Voids" instance=ExtResource("3_w64ms")]
+position = Vector2(296.5, 250)
+moves = true
+speed = 10.0
+flipH = true
 animationState = 9
 
 [node name="Void3" parent="Voids" instance=ExtResource("3_w64ms")]
