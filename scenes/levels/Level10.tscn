@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cq55v4kayhbn4"]
+[gd_scene load_steps=7 format=4 uid="uid://opmld1ct66gg"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_jnhep"]
 [ext_resource type="TileSet" uid="uid://4mt6ig31u6ar" path="res://tilesets/Interior.tres" id="3_0s5ev"]
@@ -23,7 +23,7 @@ navigation_enabled = false
 navigation_visibility_mode = 1
 
 [node name="BackgroundFurniture" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAADAAIAAAAXABYAAAAEAAIAAAAYABYAAAADAAMAAAAXABYAAAADAAQAAAAXABYAAAADAAUAAAAXABYAAAADAAYAAAAXABYAAAADAAcAAAAXABcAAAADAAgAAAAXABgAAAAEAAMAAAAYABYAAAAEAAQAAAAYABYAAAAEAAUAAAAYABYAAAAEAAYAAAAYABYAAAAEAAcAAAAYABcAAAAEAAgAAAAYABgAAAAHAAcAAAAYABAAAAAHAAgAAAAeAAsAAAAIAAgAAAAfAAsAAAAJAAcAAAAfAAAAAAAJAAgAAAAfAAEAAAAKAAcAAAAaAAYAAAAKAAgAAAAaAAcAAAALAAcAAAAbAAYAAAALAAgAAAAbAAcAAAAMAAcAAAAbABAAAAAMAAgAAAAeAA0AAAANAAMAAAAcAAIAAAANAAQAAAAcAAMAAAANAAgAAAAfAA0AAAAOAAMAAAAdAAIAAAAOAAQAAAAdAAMAAAAOAAgAAAAcAAUAAAA=")
+tile_map_data = PackedByteArray("AAADAAIAAAAXABYAAAAEAAIAAAAYABYAAAADAAMAAAAXABYAAAADAAQAAAAXABYAAAADAAUAAAAXABYAAAADAAYAAAAXABYAAAADAAcAAAAXABcAAAADAAgAAAAXABgAAAAEAAMAAAAYABYAAAAEAAQAAAAYABYAAAAEAAUAAAAYABYAAAAEAAYAAAAYABYAAAAEAAcAAAAYABcAAAAEAAgAAAAYABgAAAAHAAcAAAAYABAAAAAHAAgAAAAeAAsAAAAIAAgAAAAfAAsAAAAJAAcAAAAfAAAAAAAJAAgAAAAfAAEAAAAKAAcAAAAaAAYAAAAKAAgAAAAaAAcAAAALAAcAAAAbAAYAAAALAAgAAAAbAAcAAAAMAAcAAAAbABAAAAAMAAgAAAAeAA0AAAANAAMAAAAcAAIAAAANAAQAAAAcAAMAAAANAAgAAAAfAA0AAAAOAAMAAAAdAAIAAAAOAAQAAAAdAAMAAAAOAAgAAAAcAAUAAAAHAAYAAAAeAAYAAAAOAAUAAAAhAAYAAAAOAAYAAAAhAAcAAAAJAAYAAAAhAAMAAAAIAAYAAAAgAAIAAAAGAAYAAAAgAAMAAAAJAAMAAAAeAAQAAAAJAAQAAAAeAAUAAAAKAAMAAAAfAAQAAAAKAAQAAAAfAAUAAAAMAAQAAAAhAAoAAAAQAAcAAAAdAAYAAAAQAAgAAAAdAAcAAAAPAAgAAAAZAAQAAAAHAAMAAAAYAAgAAAAHAAQAAAAYAAkAAAAFAAMAAAAZAAgAAAAFAAQAAAAZAAkAAAAGAAMAAAAaAAgAAAAGAAQAAAAaAAkAAAAIAAQAAAAbAAkAAAA=")
 tile_set = ExtResource("3_0s5ev")
 navigation_enabled = false
 navigation_visibility_mode = 1
@@ -54,7 +54,7 @@ navigation_visibility_mode = 1
 
 [node name="ForegroundFurniture" type="TileMapLayer" parent="Layers"]
 z_index = 1
-tile_map_data = PackedByteArray("AAAPAAQAAAAaAA4AAAAQAAQAAAAbAA4AAAAEAAgAAQAjABAAAAA=")
+tile_map_data = PackedByteArray("AAAPAAQAAAAaAA4AAAAQAAQAAAAbAA4AAAAEAAgAAQAjABAAAAAJAAYAAAAhAAMAAAAGAAYAAAAgAAMAAAA=")
 tile_set = ExtResource("3_0s5ev")
 navigation_enabled = false
 navigation_visibility_mode = 1
@@ -67,7 +67,6 @@ navigation_enabled = false
 navigation_visibility_mode = 1
 
 [node name="Voids" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 
 [node name="Void1" parent="Voids" instance=ExtResource("3_rbnql")]
 position = Vector2(306, 230)
@@ -170,7 +169,6 @@ animationState = 3
 [node name="Void23" parent="Voids" instance=ExtResource("3_rbnql")]
 z_index = -1
 position = Vector2(117.5, 154)
-animationState = 1
 
 [node name="Void24" parent="Voids" instance=ExtResource("3_rbnql")]
 z_index = -1
@@ -179,6 +177,131 @@ animationState = 1
 
 [node name="Void25" parent="Voids" instance=ExtResource("3_rbnql")]
 position = Vector2(123, 218)
+animationState = 8
+
+[node name="Void26" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(268.5, 114.5)
+animationState = 5
+
+[node name="Void27" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(373, 114.5)
+flipH = true
+animationState = 5
+
+[node name="Void28" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(356.5, 153.5)
+moves = true
+speed = 10.0
+flipH = true
+animationState = 9
+
+[node name="Void29" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(376.5, 153.5)
+moves = true
+speed = 10.0
+animationState = 9
+
+[node name="Void30" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(290.5, 154)
+moves = true
+speed = 40.0
+animationState = 10
+
+[node name="Void31" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(213.5, 153.5)
+moves = true
+speed = 40.0
+flipH = true
+animationState = 10
+
+[node name="Void32" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(203.5, 281.5)
+moves = true
+speed = 40.0
+flipH = true
+animationState = 10
+
+[node name="Void33" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(408.5, 282)
+moves = true
+speed = 40.0
+animationState = 10
+
+[node name="Void34" parent="Voids" instance=ExtResource("3_rbnql")]
+z_index = -1
+position = Vector2(333.5, 123)
+animationState = 8
+
+[node name="Void35" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(316, 95)
+flipH = true
+animationState = 2
+
+[node name="Void36" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(206.5, 132)
+flipH = true
+animationState = 2
+
+[node name="Void37" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(166.5, 93)
+flipH = true
+animationState = 3
+
+[node name="Void38" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(244, 115.5)
+flipH = true
+animationState = 7
+
+[node name="Void39" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(173, 129.5)
+animationState = 4
+
+[node name="Void40" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(359.5, 219)
+moves = true
+speed = 1.0
+animationState = 9
+
+[node name="Void41" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(526, 219)
+
+[node name="Void42" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(531.5, 247)
+flipH = true
+animationState = 8
+
+[node name="Void43" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(489.5, 250.5)
+flipH = true
+animationState = 6
+
+[node name="Void44" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(199, 212)
+flipH = true
+animationState = 4
+
+[node name="Void45" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(216, 200.5)
+animationState = 8
+
+[node name="Void46" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(310.5, 201)
+animationState = 4
+
+[node name="Void47" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(298, 212)
+animationState = 7
+
+[node name="Void48" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(267, 211.5)
+animationState = 2
+
+[node name="Void49" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(232, 94.5)
+animationState = 4
+
+[node name="Void50" parent="Voids" instance=ExtResource("3_rbnql")]
+position = Vector2(208.5, 110)
 animationState = 8
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -199,7 +322,7 @@ alignment = 1
 
 [node name="Timer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_f5d4h")]
 layout_mode = 2
-waitTime = 10
+waitTime = 40
 metadata/_edit_use_anchors_ = true
 
 [node name="Clicker" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_ub0sk")]
@@ -212,6 +335,7 @@ level = NodePath("../..")
 clicker = NodePath("../HBoxContainer/Clicker")
 
 [node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

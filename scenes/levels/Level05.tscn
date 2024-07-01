@@ -1,0 +1,300 @@
+[gd_scene load_steps=8 format=4 uid="uid://bagrlpypwr4l7"]
+
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_vnp3l"]
+[ext_resource type="Texture2D" uid="uid://bontup8gyda17" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer8/Summer8.png" id="2_px6ev"]
+[ext_resource type="TileSet" uid="uid://4mt6ig31u6ar" path="res://tilesets/Interior.tres" id="3_ih1px"]
+[ext_resource type="PackedScene" uid="uid://byhdt3q3r8gd1" path="res://scenes/VoidAgent.tscn" id="4_3i78d"]
+[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/GUI/TimerLabel.tscn" id="5_mf7xf"]
+[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/GUI/ClickerLabel.tscn" id="6_7ijw1"]
+[ext_resource type="PackedScene" uid="uid://cy7ap8o40halo" path="res://scenes/GUI/ScoreScreen.tscn" id="7_1yuj4"]
+
+[node name="Level" type="Node2D"]
+texture_filter = 1
+position = Vector2(0, -66)
+scale = Vector2(2, 2)
+script = ExtResource("1_vnp3l")
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(320, 213)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_px6ev")
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="Layers"]
+z_index = -2
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAYAAAAAAAUAAAABAAcAAAAAAAQAAAABAAgAAAAAAAUAAAABAAkAAAAAAAYAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAgAAAAMABEAAAACAAkAAAACAAYAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAACAAwAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAgAAAAXAA8AAAADAAkAAAABAAYAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAgAAAATAA8AAAAEAAkAAAACAAYAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAgAAAAOABEAAAAFAAkAAAABAAYAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAgAAAAPABEAAAAGAAkAAAACAAYAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAgAAAAVAA8AAAAHAAkAAAABAAYAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAgAAAAWAA8AAAAIAAkAAAACAAYAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAgAAAAOABEAAAAJAAkAAAABAAYAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAkAAAACAAYAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAgAAAAVAA8AAAALAAkAAAABAAYAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAgAAAAWAA8AAAAMAAkAAAACAAYAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAAAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAgAAAASABEAAAANAAsAAAAAAAYAAAANAAwAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAkAAAAJABcAAAAOAAoAAAAJABgAAAAOAAsAAAABAA4AAAAOAAwAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAABAAMAAAAPAAkAAAAKABcAAAAPAAoAAAAKABgAAAAPAAsAAAACAA4AAAAPAAwAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAACAAMAAAAQAAkAAAALABcAAAAQAAoAAAALABgAAAAQAAsAAAABAA4AAAAQAAwAAAAAAAAAAAARAAAAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAABAAMAAAARAAkAAAAMABcAAAARAAoAAAAMABgAAAARAAsAAAACAA4AAAARAAwAAAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAkAAAANABcAAAASAAoAAAANABgAAAASAAsAAAABAA4AAAASAAwAAAAAAAAAAAATAAAAAAAAAAAAAAATAAEAAAAAAAAAAAATAAYAAAADAAUAAAATAAgAAAADAAUAAAATAAkAAAADAAQAAAATAAoAAAADAAUAAAATAAsAAAADAAYAAAATAAwAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAABAAUAAAAAAAMAAAATAAcAAAADAAQAAAANAAoAAAAAAAUAAAANAAkAAAABAAUAAAAOAAcAAAAJABYAAAAPAAcAAAAKABYAAAAQAAcAAAALABYAAAARAAcAAAAMABYAAAASAAcAAAANABYAAAAOAAgAAAAJABgAAAAPAAgAAAAKABgAAAAQAAgAAAALABgAAAARAAgAAAAMABgAAAASAAgAAAANABgAAAAOAAYAAAAMAAMAAAASAAYAAAASAAMAAAAPAAYAAAAXAAEAAAAQAAYAAAAPAAMAAAARAAYAAAAXAAEAAAACAAYAAAATABQAAAACAAcAAAAMABAAAAADAAYAAAAPAA8AAAADAAcAAAAXAA4AAAAEAAYAAAAOAA8AAAAEAAcAAAATAA4AAAAFAAYAAAAOAA8AAAAFAAcAAAAOABAAAAAGAAYAAAAPAA8AAAAGAAcAAAAPABAAAAAHAAYAAAAPAA8AAAAHAAcAAAAVAA4AAAAIAAYAAAAOAA8AAAAIAAcAAAAWAA4AAAAJAAYAAAAOAA8AAAAJAAcAAAAOABAAAAAKAAYAAAAPAA8AAAAKAAcAAAAPABAAAAALAAYAAAAPAA8AAAALAAcAAAAVAA4AAAAMAAYAAAAOAA8AAAAMAAcAAAAWAA4AAAANAAYAAAASAA8AAAANAAcAAAASABAAAAACAAQAAAAAAAAAAAACAAUAAAATABMAAAADAAQAAAABAAMAAAADAAUAAAAOAA4AAAAEAAQAAAACAAMAAAAEAAUAAAAPAA4AAAAFAAQAAAABAAMAAAAFAAUAAAAOAA4AAAAGAAQAAAACAAMAAAAGAAUAAAAPAA4AAAAHAAQAAAABAAMAAAAHAAUAAAAOAA4AAAAIAAQAAAACAAMAAAAIAAUAAAAPAA4AAAAJAAQAAAABAAMAAAAJAAUAAAAOAA4AAAAKAAQAAAACAAMAAAAKAAUAAAAPAA4AAAALAAQAAAABAAMAAAALAAUAAAAOAA4AAAAMAAMAAAAAAAAAAAAMAAQAAAACAAMAAAAMAAUAAAAPAA4AAAANAAMAAAAAAAEAAAANAAQAAAABAAQAAAANAAUAAAASAA4AAAAOAAMAAAATAAUAAAAOAAQAAAATAAYAAAAOAAUAAAAMAAIAAAAPAAMAAAAOAAAAAAAPAAQAAAAOAAEAAAAPAAUAAAAXAAAAAAAQAAMAAAAPAAAAAAAQAAQAAAAPAAEAAAAQAAUAAAAPAAIAAAARAAMAAAAOAAAAAAARAAQAAAAOAAEAAAARAAUAAAAXAAAAAAASAAMAAAAWAAUAAAASAAQAAAAWAAYAAAASAAUAAAASAAIAAAATAAQAAAADAAQAAAATAAUAAAADAAUAAAATAAIAAAAAAAAAAAATAAMAAAADAAMAAAAKAAgAAAAPABEAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="BackgroundFurniture" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAQAAUAAAAeAAIAAAAQAAYAAAAeAAMAAAARAAUAAAAfAAIAAAARAAYAAAAfAAMAAAASAAYAAAAYAAQAAAAOAAYAAAAdAAYAAAAHAAcAAAAeAAoAAAAHAAgAAAAeAAsAAAAIAAgAAAAfAAsAAAACAAcAAAAaAAYAAAACAAgAAAAaAAcAAAADAAcAAAAbAAYAAAADAAgAAAAbAAcAAAAFAAgAAAAaAAUAAAAJAAgAAAAeAA0AAAAKAAgAAAAfAA0AAAAOAAkAAAAeAAQAAAAOAAoAAAAeAAUAAAAPAAkAAAAfAAQAAAAPAAoAAAAfAAUAAAAQAAkAAAAcAAoAAAAQAAoAAAAcAAsAAAARAAkAAAAdAAoAAAARAAoAAAAdAAsAAAASAAkAAAAaAAgAAAASAAoAAAAaAAkAAAARAAgAAAAhAAUAAAAGAAcAAAAdAAYAAAAGAAgAAAAdAAcAAAALAAgAAAAaAAQAAAAJAAcAAAAbABAAAAAFAAcAAAAYABAAAAAKAAcAAAAZABIAAAALAAcAAAAaABIAAAAMAAgAAAAgAAwAAAANAAgAAAAhAAwAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="BackgroundFurnitureAccents" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAHAAgAAAAfAAgAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Doors" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAOAAkAAAAGAAAAAAAOAAoAAAAGAAEAAAAPAAkAAAAHAAAAAAAPAAoAAAAHAAEAAAANAAUAAAADABMAAAANAAYAAAADABQAAAANAAcAAAADABMAAAANAAgAAAADABQAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Floors" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAASAAcAAAALAAQAAAAOAAcAAAAJAAQAAAANAAcAAAAJAAQAAAAQAAcAAAAJAAQAAAAPAAcAAAAKAAQAAAARAAcAAAAKAAQAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Stairs" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAOAAkAAAAGAAAAAAAOAAoAAAAGAAEAAAAPAAkAAAAHAAAAAAAPAAoAAAAHAAEAAAAMAAcAAAAFAAAAAAAMAAgAAAAFAAEAAAALAAcAAAAEAAAAAAALAAgAAAAEAAEAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Trim" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAACAAUAAAABAAEAAAACAAQAAAABAAAAAAAOAAIAAAABAAAAAAAOAAMAAAABAAEAAAASAAIAAAACAAAAAAASAAMAAAACAAEAAAATAAMAAAADAAMAAAATAAIAAAAAAAAAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="ForegroundFurniture" type="TileMapLayer" parent="Layers"]
+z_index = 1
+tile_map_data = PackedByteArray("AAARAAYAAAAaAA4AAAASAAYAAAAbAA4AAAAJAAgAAAAeAAgAAAAIAAgAAAAfAAkAAAAQAAgAAAAgAAUAAAAPAAQAAAAgAAQAAAARAAQAAAAhAAQAAAALAAYAAAAgAAQAAAAJAAYAAAAhAAQAAAAGAAYAAAAhAAMAAAADAAYAAAAgAAMAAAAPAAYAAAAYAAUAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="ForegroundFurnitureAccents" type="TileMapLayer" parent="Layers"]
+z_index = 1
+tile_map_data = PackedByteArray("AAAPAAgAAAAhAAQAAAA=")
+tile_set = ExtResource("3_ih1px")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Voids" type="Node2D" parent="."]
+
+[node name="Void1" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(274.5, 257)
+speed = 60.0
+animationState = 2
+
+[node name="Void2" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(256.5, 251.5)
+speed = 60.0
+animationState = 5
+
+[node name="Void3" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(240.5, 281)
+moves = true
+speed = 40.0
+animationState = 10
+
+[node name="Void4" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(341.5, 281.5)
+moves = true
+speed = 40.0
+flipH = true
+animationState = 10
+
+[node name="Void5" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(542, 346)
+moves = true
+speed = 15.0
+flipH = true
+animationState = 9
+
+[node name="Void6" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(560, 346)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void7" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(542, 320)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void8" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(91, 219)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void9" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(535, 159)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void10" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(578, 202.5)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void11" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(513.5, 217)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void12" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(544.5, 218)
+moves = true
+speed = 15.0
+flipH = true
+animationState = 9
+
+[node name="Void13" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(199, 200)
+flipH = true
+animationState = 3
+
+[node name="Void14" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(102, 246.5)
+flipH = true
+animationState = 2
+
+[node name="Void15" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(207.5, 264.5)
+animationState = 2
+
+[node name="Void16" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(309, 212)
+animationState = 2
+
+[node name="Void17" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(363.5, 199)
+animationState = 3
+
+[node name="Void18" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(375.5, 211.5)
+flipH = true
+animationState = 8
+
+[node name="Void19" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(480.5, 287)
+flipH = true
+animationState = 4
+
+[node name="Void20" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(533, 271.5)
+
+[node name="Void21" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(563, 278.5)
+animationState = 7
+
+[node name="Void22" parent="Voids" instance=ExtResource("4_3i78d")]
+z_index = -1
+position = Vector2(376, 260.5)
+animationState = 5
+
+[node name="Void23" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(410, 256.5)
+animationState = 6
+
+[node name="Void24" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(470, 187.5)
+animationState = 2
+
+[node name="Void25" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(490, 147.5)
+flipH = true
+animationState = 2
+
+[node name="Void26" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(502.5, 135.5)
+animationState = 8
+
+[node name="Void27" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(168.5, 260.5)
+flipH = true
+animationState = 3
+
+[node name="Void28" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(108, 265)
+flipH = true
+animationState = 6
+
+[node name="Void29" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(81.5, 278)
+animationState = 3
+
+[node name="Void30" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(304.5, 257)
+animationState = 4
+
+[node name="Void31" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(454.5, 345.5)
+animationState = 4
+
+[node name="Void32" parent="Voids" instance=ExtResource("4_3i78d")]
+z_index = -1
+position = Vector2(463, 315)
+flipH = true
+animationState = 8
+
+[node name="Void33" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(592.5, 310)
+flipH = true
+animationState = 8
+
+[node name="Void34" parent="Voids" instance=ExtResource("4_3i78d")]
+position = Vector2(599, 289.5)
+flipH = true
+animationState = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 213)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Timer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_mf7xf")]
+layout_mode = 2
+waitTime = 35
+metadata/_edit_use_anchors_ = true
+
+[node name="Clicker" parent="CanvasLayer/HBoxContainer" instance=ExtResource("6_7ijw1")]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreScreen" parent="CanvasLayer" node_paths=PackedStringArray("level", "clicker") instance=ExtResource("7_1yuj4")]
+visible = false
+level = NodePath("../..")
+clicker = NodePath("../HBoxContainer/Clicker")
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 64
+theme_override_font_sizes/font_size = 512
+text = "3"

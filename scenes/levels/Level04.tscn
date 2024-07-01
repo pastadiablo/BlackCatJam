@@ -1,0 +1,280 @@
+[gd_scene load_steps=8 format=4 uid="uid://bh2oop3cqa80q"]
+
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_ij7k2"]
+[ext_resource type="TileSet" uid="uid://4mt6ig31u6ar" path="res://tilesets/Interior.tres" id="2_j7pmi"]
+[ext_resource type="PackedScene" uid="uid://byhdt3q3r8gd1" path="res://scenes/VoidAgent.tscn" id="3_wg5l2"]
+[ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/GUI/TimerLabel.tscn" id="4_05khf"]
+[ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/GUI/ClickerLabel.tscn" id="5_hjreu"]
+[ext_resource type="PackedScene" uid="uid://cy7ap8o40halo" path="res://scenes/GUI/ScoreScreen.tscn" id="6_6ggkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03a7q"]
+size = Vector2(5, 8)
+
+[node name="Level" type="Node2D"]
+texture_filter = 1
+position = Vector2(0, -66)
+scale = Vector2(2, 2)
+script = ExtResource("1_ij7k2")
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="Layers"]
+z_index = -2
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAACAAwAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAMAAAAFAAMAAAAAAAUAAAAFAAQAAAAAAAUAAAAFAAUAAAAAAAQAAAAFAAYAAAAAAAUAAAAFAAcAAAAAAAQAAAAFAAgAAAAAAAUAAAAFAAkAAAAAAAYAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAABAAMAAAAGAAMAAAACABYAAAAGAAQAAAACABcAAAAGAAUAAAACABgAAAAGAAYAAAACABYAAAAGAAcAAAACABcAAAAGAAgAAAACABgAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAACAAMAAAAHAAMAAAADABYAAAAHAAQAAAADABcAAAAHAAUAAAADABgAAAAHAAYAAAADABYAAAAHAAcAAAADABcAAAAHAAgAAAADABgAAAAHAAkAAAACAAYAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAABAAMAAAAIAAMAAAADABYAAAAIAAQAAAADABcAAAAIAAUAAAADABgAAAAIAAYAAAADABYAAAAIAAcAAAADABcAAAAIAAgAAAADABgAAAAIAAkAAAABAAYAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAACAAMAAAAJAAMAAAADABYAAAAJAAQAAAADABcAAAAJAAUAAAADABgAAAAJAAYAAAADABYAAAAJAAcAAAADABcAAAAJAAgAAAADABgAAAAJAAkAAAACAAYAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAABAAMAAAAKAAMAAAADABYAAAAKAAQAAAADABcAAAAKAAUAAAADABgAAAAKAAYAAAADABYAAAAKAAcAAAADABcAAAAKAAgAAAADABgAAAAKAAkAAAABAAYAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAACAAMAAAALAAMAAAADABYAAAALAAQAAAADABcAAAALAAUAAAADABgAAAALAAYAAAADABYAAAALAAcAAAADABcAAAALAAgAAAADABgAAAALAAkAAAACAAYAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAABAAMAAAAMAAMAAAADABYAAAAMAAQAAAADABcAAAAMAAUAAAADABgAAAAMAAYAAAADABYAAAAMAAcAAAAAABUAAAAMAAgAAAAAABYAAAAMAAkAAAABAAYAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAACAAMAAAANAAMAAAAGABYAAAANAAQAAAAGABcAAAANAAUAAAAGABgAAAANAAYAAAAGABYAAAANAAcAAAAGABcAAAANAAgAAAAGABgAAAANAAkAAAABAAYAAAANAAoAAAAAAAAAAAANAAsAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAADAAMAAAAOAAMAAAADAAUAAAAOAAQAAAADAAUAAAAOAAUAAAADAAQAAAAOAAYAAAADAAUAAAAOAAcAAAADAAQAAAAOAAgAAAADAAUAAAAOAAkAAAADAAYAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAsAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAARAAwAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAASAAsAAAAAAAAAAAASAAwAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAAAAAAAAAATAAMAAAAAAAAAAAATAAQAAAAAAAAAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAATAAwAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAABAAAAAAAAAAAAAAABAA0AAAAAAAAAAAACAAAAAAAAAAAAAAACAA0AAAAAAAAAAAADAAAAAAAAAAAAAAADAA0AAAAAAAAAAAAEAAAAAAAAAAAAAAAEAA0AAAAAAAAAAAAFAAAAAAAAAAAAAAAFAA0AAAAAAAAAAAAGAAAAAAAAAAAAAAAGAA0AAAAAAAAAAAAHAAAAAAAAAAAAAAAHAA0AAAAAAAAAAAAIAAAAAAAAAAAAAAAIAA0AAAAAAAAAAAAJAAAAAAAAAAAAAAAJAA0AAAAAAAAAAAAKAAAAAAAAAAAAAAAKAA0AAAAAAAAAAAALAAAAAAAAAAAAAAALAA0AAAAAAAAAAAAMAAAAAAAAAAAAAAAMAA0AAAAAAAAAAAANAAAAAAAAAAAAAAANAA0AAAAAAAAAAAAOAAAAAAAAAAAAAAAOAA0AAAAAAAAAAAAPAAAAAAAAAAAAAAAPAA0AAAAAAAAAAAAQAAAAAAAAAAAAAAAQAA0AAAAAAAAAAAARAAAAAAAAAAAAAAARAA0AAAAAAAAAAAASAAAAAAAAAAAAAAASAA0AAAAAAAAAAAATAAAAAAAAAAAAAAATAA0AAAAAAAAAAAAUAAAAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAAUAA0AAAAAAAAAAAAGAAkAAAACAAYAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="BackgroundFurniture" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAIAAMAAAAaAAoAAAAIAAQAAAAaAAsAAAAJAAMAAAAbAAoAAAAJAAQAAAAbAAsAAAAGAAMAAAASABcAAAAGAAQAAAASABgAAAAHAAMAAAATABcAAAAHAAQAAAATABgAAAAJAAgAAAAeAA0AAAAKAAcAAAAfAAwAAAAKAAgAAAAfAA0AAAAGAAgAAAAaAAcAAAAHAAgAAAAbAAcAAAAIAAgAAAAdAAcAAAALAAgAAAAZAAQAAAANAAgAAAAaAAQAAAAGAAYAAAAaAAYAAAAHAAYAAAAbAAYAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="BackgroundFurnitureAccents" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAJAAgAAAAdAAgAAAAKAAMAAAAgAAUAAAALAAMAAAAhAAUAAAALAAYAAAAaAAgAAAAIAAYAAAAaAAkAAAALAAcAAAAeABIAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Doors" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAJAAUAAAABABMAAAAJAAYAAAABABQAAAAJAAMAAAACABMAAAAJAAQAAAACABQAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Floors" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAANAAcAAAAKAAQAAAALAAUAAAAJAAYAAAAMAAUAAAAJAAYAAAANAAMAAAAKAAQAAAALAAcAAAAKAAQAAAAMAAcAAAAJAAQAAAALAAMAAAAKAAQAAAAMAAMAAAAJAAQAAAAKAAMAAAAJAAQAAAAIAAMAAAAJAAQAAAAJAAMAAAAKAAQAAAAGAAMAAAAJAAQAAAAHAAMAAAAKAAQAAAAKAAUAAAAIAAYAAAAIAAUAAAAJAAQAAAAJAAUAAAAKAAQAAAAGAAUAAAAJAAQAAAAHAAUAAAAKAAQAAAAKAAcAAAAJAAQAAAAIAAcAAAAJAAQAAAAJAAcAAAAKAAQAAAAGAAcAAAAJAAQAAAAHAAcAAAAKAAQAAAAMAAkAAAAIAAUAAAANAAUAAAAKAAYAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Stairs" type="TileMapLayer" parent="Layers"]
+tile_map_data = PackedByteArray("AAAGAAcAAAAGAAAAAAAGAAgAAAAGAAEAAAAHAAcAAAAHAAAAAAAHAAgAAAAHAAEAAAAMAAUAAAAEAAAAAAAMAAYAAAAEAAEAAAANAAUAAAAFAAAAAAANAAYAAAAFAAEAAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Trim" type="TileMapLayer" parent="Layers"]
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="ForegroundFurniture" type="TileMapLayer" parent="Layers"]
+z_index = 1
+tile_map_data = PackedByteArray("AAALAAQAAAAcAA8AAAAMAAQAAAAdAA8AAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="ForegroundFurnitureAccents" type="TileMapLayer" parent="Layers"]
+z_index = 1
+tile_map_data = PackedByteArray("AAAGAAYAAAAgAA4AAAAHAAYAAAAhAA4AAAA=")
+tile_set = ExtResource("2_j7pmi")
+navigation_enabled = false
+navigation_visibility_mode = 1
+
+[node name="Voids" type="Node2D" parent="."]
+
+[node name="Void1" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(272, 250)
+animationState = 2
+
+[node name="Void2" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(303, 266)
+animationState = 4
+
+[node name="Void3" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(371, 276)
+flipH = true
+animationState = 3
+
+[node name="Void4" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(339.5, 282)
+moves = true
+speed = 15.0
+flipH = true
+animationState = 9
+
+[node name="Void5" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(382.5, 153.5)
+moves = true
+speed = 15.0
+animationState = 9
+
+[node name="Void6" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(269.5, 216.5)
+moves = true
+speed = 15.0
+flipH = true
+animationState = 9
+
+[node name="Void7" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(344.5, 217.5)
+moves = true
+speed = 30.0
+animationState = 10
+
+[node name="Void8" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(317, 218)
+moves = true
+speed = 30.0
+animationState = 10
+
+[node name="Void9" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(206.5, 119)
+moves = true
+speed = 5.0
+animationState = 9
+
+[node name="Void10" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(298.5, 129.5)
+moves = true
+speed = 5.0
+flipH = true
+animationState = 9
+
+[node name="Void11" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(254, 153.5)
+moves = true
+speed = 10.0
+flipH = true
+animationState = 9
+
+[node name="Void12" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(233, 202)
+flipH = true
+animationState = 8
+
+[node name="Void13" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(233.5, 215)
+animationState = 6
+
+[node name="Void14" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(215.5, 215)
+
+[node name="Void15" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(364, 193)
+flipH = true
+animationState = 2
+
+[node name="Void16" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(374.5, 138.5)
+flipH = true
+animationState = 7
+
+[node name="Void17" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(337, 113.5)
+animationState = 6
+
+[node name="Void18" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(370, 118.5)
+animationState = 8
+
+[node name="Void19" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(279, 139)
+
+[node name="Void20" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(358, 251)
+
+[node name="Void21" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(437.5, 260)
+flipH = true
+animationState = 8
+
+[node name="Void22" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(273, 277)
+flipH = true
+animationState = 4
+
+[node name="Void23" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(441, 217.5)
+flipH = true
+animationState = 3
+
+[node name="Void24" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(397, 138.5)
+animationState = 3
+
+[node name="Void25" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(230, 110.5)
+animationState = 8
+
+[node name="Void26" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(202, 153.5)
+moves = true
+speed = 5.0
+animationState = 9
+
+[node name="Void27" parent="Voids" instance=ExtResource("3_wg5l2")]
+z_index = -1
+position = Vector2(206, 250)
+moves = true
+speed = 5.0
+animationState = 9
+
+[node name="Void28" parent="Voids" instance=ExtResource("3_wg5l2")]
+position = Vector2(229.5, 278)
+moves = true
+speed = 5.0
+flipH = true
+animationState = 9
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 213)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Timer" parent="CanvasLayer/HBoxContainer" instance=ExtResource("4_05khf")]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Clicker" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_hjreu")]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreScreen" parent="CanvasLayer" node_paths=PackedStringArray("level", "clicker") instance=ExtResource("6_6ggkg")]
+visible = false
+level = NodePath("../..")
+clicker = NodePath("../HBoxContainer/Clicker")
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 64
+theme_override_font_sizes/font_size = 512
+text = "3"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(356.5, 284.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_03a7q")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(284, 158.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_03a7q")

@@ -44,11 +44,9 @@ func _ready() -> void:
 	left = find_child("Left")
 	right.body_exited.connect(func(body):
 		if left.get_overlapping_bodies().has(body):
-			print("detected missing right side! %s" % body)
 			direction *= -1)
 	left.body_exited.connect(func(body):
 		if right.get_overlapping_bodies().has(body):
-			print("detected missing left side! %s" % body)
 			direction *= -1)
 	playback = tree.get("parameters/playback")
 	direction = -1 if flipH else 1
