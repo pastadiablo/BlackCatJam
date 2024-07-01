@@ -150,9 +150,9 @@ func endLevel() -> void:
 				scoreScreen.nextLevelButton.hide()
 			else:
 				scoreScreen.nextLevelButton.show()
-			scoreScreen.levelSelectButton.show()
-			scoreScreen.retryButton.show()
-			scoreScreen.statusLabel.show()
+		scoreScreen.levelSelectButton.show()
+		scoreScreen.retryButton.show()
+		scoreScreen.statusLabel.show()
 	)
 	
 	

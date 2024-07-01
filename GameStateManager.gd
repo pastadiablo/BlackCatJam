@@ -44,7 +44,10 @@ func _get_all_file_paths(path: String) -> Array[String]:
 		file_name = dir.get_next()  
 	var resource_paths: Array[String] = []
 	for resource_path in file_paths:  
-		if '.tres.remap' in resource_path:
-			resource_path = resource_path.trim_suffix('.remap')
-		resource_paths.append(resource_path)
+		var new_path = resource_path
+		if '.tres.remap' in new_path:
+			new_path = new_path.trim_suffix('.remap')
+		if '.tscn.remap' in new_path:
+			new_path = new_path.trim_suffix('.remap')
+		resource_paths.append(new_path)
 	return resource_paths

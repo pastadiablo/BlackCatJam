@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bagrlpypwr4l7"]
+[gd_scene load_steps=9 format=4 uid="uid://bagrlpypwr4l7"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_vnp3l"]
 [ext_resource type="Texture2D" uid="uid://bontup8gyda17" path="res://textures/backgrounds/Free-Summer-Pixel-Art-Backgrounds/PNG/summer8/Summer8.png" id="2_px6ev"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cilj467j6wng7" path="res://scenes/GUI/TimerLabel.tscn" id="5_mf7xf"]
 [ext_resource type="PackedScene" uid="uid://bdh1v1uete7wu" path="res://scenes/GUI/ClickerLabel.tscn" id="6_7ijw1"]
 [ext_resource type="PackedScene" uid="uid://cy7ap8o40halo" path="res://scenes/GUI/ScoreScreen.tscn" id="7_1yuj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a11y"]
+size = Vector2(5, 8)
 
 [node name="Level" type="Node2D"]
 texture_filter = 1
@@ -131,13 +134,13 @@ speed = 15.0
 animationState = 9
 
 [node name="Void9" parent="Voids" instance=ExtResource("4_3i78d")]
-position = Vector2(535, 159)
+position = Vector2(532.5, 155.5)
 moves = true
 speed = 15.0
 animationState = 9
 
 [node name="Void10" parent="Voids" instance=ExtResource("4_3i78d")]
-position = Vector2(578, 202.5)
+position = Vector2(578.5, 198)
 moves = true
 speed = 15.0
 animationState = 9
@@ -298,3 +301,10 @@ grow_vertical = 0
 theme_override_constants/outline_size = 64
 theme_override_font_sizes/font_size = 512
 text = "3"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(452.5, 223)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_8a11y")
